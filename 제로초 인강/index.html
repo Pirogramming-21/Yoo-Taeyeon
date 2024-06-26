@@ -612,6 +612,8 @@
                     color: rgba(8, 8, 8, .5);
                     display: flex;
                     justify-content: flex-start;
+                    line-height: 23px;
+                    margin-bottom: 17px;
                 }
                 #main-newstand header.bold {
                     font-weight: bold;
@@ -620,6 +622,11 @@
                 #main-newstand-gray {
                     display: flex;
                     justify-content: flex-start;
+                    height: 26px;
+                    padding: 12px 20px;
+                    background-color: var(--color_block_bg);
+                    border-radius: 4px;
+
                 }
                 #main-newstand a {
                     text-decoration: none;
@@ -629,6 +636,19 @@
                 }
                 #main-newstand a:hover {
                     text-decoration: underline;
+                }
+                #main-newstand-grid {
+                    display: grid;
+                    justify-content: center;
+                    align-items: center;
+                    height: 224px;
+                    grid-gap: 1px;
+                    grid-template-rows: 1fr 1fr 1fr 1fr;
+                    width: 790px;
+                    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+                    border: 1px solid var(--color_border_in);
+                    border-radius: 4px;
+                    margin-top: 18px;
                 }
                 #main-newstand footer {
                     border-top: 1px solid var(--color_border_in);
@@ -658,7 +678,7 @@
                                 <a href="#">뉴스스탠드</a>
                                 <a href="#">뉴스홈</a>
                             </div>
-                            <div id="main-newstand-gird">
+                            <div id="main-newstand-grid">
                                 <div>언론사</div>
                                 <div>언론사</div>
                                 <div>언론사</div>
