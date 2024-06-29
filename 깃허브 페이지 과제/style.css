@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2B3137;
+    background-image: url(./background.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 30px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: -100px;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin-left: 10px; 
+}
+
+nav ul li {
+    margin-left: 20px; 
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 10px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+}
+
+.search input {
+    padding: 10px 12px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 10px;
+    width: 200px;
+}
+
+.search a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 12px;
+    border-radius: 4px;
+}
+
+main {
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;
+    flex-wrap: wrap; 
+    padding: 40px 0;
+}
+
+.content {
+    max-width: 600px; 
+    margin: 0 50px 50px 50px; 
+    text-align: left;
+    color: white;
+}
+.content h1 {
+    font-size: 60px; 
+}
+
+.sign-up-box {
+    max-width: 400px;
+    margin: 50px 0 0 -50px; 
+    background-color: white;
+    padding: 30px;
+    border-radius: 4px;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+    left: -255px;
+    
+}
+
+.sign-up-box form {
+    text-align: left;
+}
+
+.sign-up-box form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.sign-up-box form input {
+    width: 100%; 
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.sign-up-box form .sign-up-button {
+    width: 100%; 
+    background-color: #2ecc71;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+}
+
+footer {
+    background-color: white;
+    text-align: right;
+}
+
+footer img {
+    max-width: 500px;
+    margin-right: 200px; 
+}
