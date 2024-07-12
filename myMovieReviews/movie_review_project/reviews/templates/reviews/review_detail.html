@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ review.title }}</h1>
+  <p>Director: {{ review.director }}</p>
+  <p>Actors: {{ review.actors }}</p>
+  <p>Genre: {{ review.genre }}</p>
+  <p>Year: {{ review.year }}</p>
+  <p>Rating: {{ review.rating }}/5</p>
+  <p>Runtime: {{ review.runtime }} minutes</p>
+  <p>{{ review.content }}</p>
+  <a href="{% url 'review_update' pk=review.pk %}">수정</a>
+  <a href="{% url 'review_delete' pk=review.pk %}">삭제</a>
+  <a href="{% url 'review_list' %}">리뷰 리스트 페이지로 이동하기</a>
+{% endblock %}

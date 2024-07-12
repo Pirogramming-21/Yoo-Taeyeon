@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>My Movie Reviews</h1>
+  <a href="{% url 'review_create' %}">Add a new review</a>
+  {% for review in reviews %}
+    <div>
+      <h2><a href="{% url 'review_detail' pk=review.pk %}">{{ review.title }}</a></h2>
+      <p>개봉년도: {{ review.year }} | 장르: {{ review.genre }} | 별점: {{ review.rating }}/5</p>
+    </div>
+  {% endfor %}
+{% endblock %}
