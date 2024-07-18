@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ idea.title }}</h1>
+
+<div class="idea-details">
+    <img src="{{ idea.image.url }}" alt="{{ idea.title }}" class="idea-image">
+    
+    <div class="idea-info">
+        <p><strong>내용:</strong> {{ idea.content }}</p>
+        <p><strong>관심도:</strong> {{ idea.interest }}</p>
+        <p><strong>등록일:</strong> {{ idea.created_at|date:"Y-m-d H:i" }}</p>
+    </div>
+
+    <div class="idea-actions">
+        <form action="{% url 'idea_star' idea.pk %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="star-button">
+                {% if user in idea.ideastar_set.all %}
+                    찜 취소
+                {% else %}
+                    찜하기
+                {% endif %}
+            </button>
+        </form>
+        
+        <a href="{% url 'idea_update' idea.pk %}" class="button">수정</a>
+        <a href="{% url 'idea_delete' idea.pk %}" class="button delete-button" onclick="return confirm('정말로 삭제하시겠습니까?')">삭제</a>
+    </div>
+</div>
+
+<h2>사용된 개발 도구</h2>
+<ul class="devtools-list">
+    {% for devtool in idea.devtools.all %}
+        <li><a href="{% url 'devtool_detail' devtool.pk %}">{{ devtool.name }}</a></li>
+    {% empty %}
+        <li>사용된 개발 도구가 없습니다.</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'idea_list' %}" class="button">목록으로 돌아가기</a>
+
+{% endblock %}

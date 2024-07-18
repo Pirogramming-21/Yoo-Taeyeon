@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ devtool.name }}</h1>
+<p>종류: {{ devtool.kind }}</p>
+<p>{{ devtool.content }}</p>
+
+<h2>이 도구를 사용한 아이디어</h2>
+<ul>
+    {% for idea in ideas %}
+        <li><a href="{% url 'idea_detail' idea.pk %}">{{ idea.title }}</a></li>
+    {% empty %}
+        <li>이 도구를 사용한 아이디어가 없습니다.</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'devtool_list' %}">목록으로 돌아가기</a>
+{% endblock %}

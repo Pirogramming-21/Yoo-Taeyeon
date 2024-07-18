@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>개발 도구 목록</h1>
+
+<ul>
+    {% for devtool in devtools %}
+        <li><a href="{% url 'devtool_detail' devtool.pk %}">{{ devtool.name }}</a></li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'devtool_create' %}" class="button">새 개발 도구 등록</a>
+{% endblock %}
