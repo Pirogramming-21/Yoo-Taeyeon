@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pirostagram</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .post {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .comment {
+            margin-top: 5px;
+        }
+        .comment-form input {
+            width: 70%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pirostagram</h1>
+    {% for post in posts %}
+        <div class="post" id="post-{{ post.id }}">
+            <p>{{ post.content }}</p>
+            <button class="like-btn" data-post-id="{{ post.id }}">
+                좋아요 (<span class="likes-count">{{ post.likes.count }}</span>)
+            </button>
+            <div class="comments">
+                {% for comment in post.comments.all %}
+                    <div class="comment" id="comment-{{ comment.id }}">
+                        <p>{{ comment.content }}</p>
+                        <button class="delete-comment-btn" data-comment-id="{{ comment.id }}">삭제</button>
+                    </div>
+                {% endfor %}
+            </div>
+            <form class="comment-form" data-post-id="{{ post.id }}">
+                <input type="text" name="content" placeholder="댓글 작성...">
+                <button type="submit">작성</button>
+            </form>
+        </div>
+    {% empty %}
+        <p>게시물이 없습니다.</p>
+    {% endfor %}
+    
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
